@@ -53,11 +53,7 @@ public class GCPPCalculatorTest extends SetupTests{
         System.out.println("calcEstimation = " + calcEstimation);
         // переключаємося на сторінку електронної пошти
         getEmailPage().switchToPreviousTab(yopTab);
-        try {
-            sleep(30000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        getEmailPage().waiter(WAIT_TIME * 3);
         getYopMailPage().clickAndCheckEmail();
         getYopMailPage().waitForPageLoadComplete(WAIT_TIME);
         getYopMailPage().comeInYopFrame();
